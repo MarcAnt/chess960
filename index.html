@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Create random positions for Chess960/Fisher Random">
+    <link rel="icon" type="image/png" href="img/chesspieces/wikipedia/bN.png" />
+    <!--Cheesboard css-->
+    <link rel="stylesheet" href="css/chessboard-0.3.0.min.css">
+  
+    <style>
+        * {
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .content {
+            margin-top: 2.5em; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column; 
+          
+        }
+        .board {
+            margin: 1em;
+        }
+
+        .fen-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .display-fen  {
+            font-weight: 700; 
+            border: none; 
+            padding: .8em; 
+            width: 350px; 
+            text-align: center;
+            outline: 0; 
+            
+        }
+        button {
+            color: rgb(131, 97, 70); 
+            background-color: #F0D9B5;
+            border-style: none; 
+            padding: 1em; 
+            margin: .5em; 
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: .3em; 
+            border: 1px solid  rgb(131, 97, 70); 
+            transition: background .5s ease-in-out; 
+        }
+        button:hover {
+            background-color: rgb(255, 241, 219);
+        }
+    </style>
+    <title>Chess 960 Random Positions</title>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Chess960 Random Position</h1>
+        <div id="board" class="board" style="width: 450px"></div>
+
+        <div class="fen-content">
+            <label for="fen">FEN: </label>
+            <input type="text" class="display-fen" id="fen" readonly>
+        </div>
+
+        <button id="btn-copy">Copy Position to clipboard</button>
+        
+        <button id="genPos">Change Position</button>
+    
+        <footer>
+            Created by <a href="https://github.com/MarcAnt" target="_blank" rel="">MarcAnt</a> - <span id="year"></span>
+            
+            <script> 
+                let year = new Date()
+                document.getElementById('year').textContent = year.getFullYear()
+            </script>
+        </footer>
+    </div>
+
+
+      <!--Cheesboard js-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    <script src="js/chessboard-0.3.0.min.js"></script>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
